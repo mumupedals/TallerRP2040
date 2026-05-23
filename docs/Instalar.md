@@ -92,19 +92,19 @@ Opción A: Descargar ZIP
 1. En GitHub, haz clic en `Code`.
 2. Haz clic en `Download ZIP`.
 3. Descomprime el archivo.
-4. Abre un archivo `.ino` desde una de las carpetas de ejemplo.
+4. Abre un archivo `.ino` desde una de las carpetas del taller, por ejemplo `DrumLoop/DrumLoop.ino` o `Dronaldo/Dronaldo.ino`.
 
 Opción B: Usar Git
 
 ```bash
-git clone REPLACE_WITH_REPOSITORY_URL
-cd REPLACE_WITH_REPOSITORY_FOLDER
+git clone https://github.com/mumupedals/TallerRP2040.git
+cd TallerRP2040
 ```
 
 ## 6. Subir un sketch
 
 1. Conecta el instrumento por USB.
-2. Abre una carpeta de ejemplo, como `FourVoiceGate/FourVoiceGate.ino`.
+2. Abre uno de los sketches del taller, como `DrumLoop/DrumLoop.ino` o `Dronaldo/Dronaldo.ino`.
 3. Haz clic en `Verify`.
 4. Haz clic en `Upload`.
 
@@ -115,7 +115,6 @@ Si la subida falla, mantén presionado el botón `BOOTSEL` del RP2040 Zero mient
 Si usas `arduino-cli`, compila con:
 
 ```bash
-arduino-cli compile --fqbn rp2040:rp2040:waveshare_rp2040_zero:usbstack=tinyusb FourVoiceGate
 arduino-cli compile --fqbn rp2040:rp2040:waveshare_rp2040_zero:usbstack=tinyusb DrumLoop
 arduino-cli compile --fqbn rp2040:rp2040:waveshare_rp2040_zero:usbstack=tinyusb Dronaldo
 ```
