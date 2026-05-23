@@ -12,7 +12,7 @@ This repository contains the example instruments from the workshop and a place f
 
 ## Start here
 
-1. Install the required software: [docs/student-setup.md](docs/student-setup.md)
+1. Install the required software: [English](docs/student-setup.md) / [Español](docs/student-setup-es.md)
 2. Check the hardware pin map: [docs/hardware-reference.md](docs/hardware-reference.md)
 3. Open one example folder in Arduino IDE.
 4. Select `Raspberry Pi Pico` and `Adafruit TinyUSB`.
@@ -32,7 +32,7 @@ This repository contains the example instruments from the workshop and a place f
   - `libraries/BRAIDS`
   - `libraries/STMLIB`
 
-Detailed setup steps are in [docs/student-setup.md](docs/student-setup.md).
+Detailed setup steps are in [English](docs/student-setup.md) and [Español](docs/student-setup-es.md).
 
 ## Uploading student instruments
 

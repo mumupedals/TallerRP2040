@@ -36,14 +36,14 @@ https://github.com/earlephilhower/arduino-pico/releases/download/global/package_
 In Arduino IDE:
 
 1. Open `Tools > Board`.
-2. Select `Raspberry Pi Pico/RP2040/RP2350 > Raspberry Pi Pico`.
+2. Select `Raspberry Pi Pico/RP2040/RP2350 > Waveshare RP2040 Zero`.
 3. Set `Tools > USB Stack` to `Adafruit TinyUSB`.
 4. Leave `Upload Method` as `Default (UF2)`.
 
 The important board settings are:
 
 ```text
-Board: Raspberry Pi Pico
+Board: Waveshare RP2040 Zero
 Core: Raspberry Pi Pico/RP2040/RP2350
 USB Stack: Adafruit TinyUSB
 Upload Method: Default (UF2)
@@ -108,14 +108,14 @@ cd REPLACE_WITH_REPOSITORY_FOLDER
 3. Click `Verify`.
 4. Click `Upload`.
 
-If upload fails, hold the Pico `BOOTSEL` button while plugging in USB, then upload again. The board should appear as a USB drive or upload target.
+If upload fails, hold the RP2040 Zero `BOOTSEL` button while plugging in USB, then upload again. The board should appear as a USB drive or upload target.
 
 ## 7. Command-line compile, optional
 
 If you use `arduino-cli`, compile with:
 
 ```bash
-arduino-cli compile --fqbn rp2040:rp2040:rpipico:usbstack=tinyusb FourVoiceGate
-arduino-cli compile --fqbn rp2040:rp2040:rpipico:usbstack=tinyusb DrumLoop
-arduino-cli compile --fqbn rp2040:rp2040:rpipico:usbstack=tinyusb Dronaldo
+arduino-cli compile --fqbn rp2040:rp2040:waveshare_rp2040_zero:usbstack=tinyusb FourVoiceGate
+arduino-cli compile --fqbn rp2040:rp2040:waveshare_rp2040_zero:usbstack=tinyusb DrumLoop
+arduino-cli compile --fqbn rp2040:rp2040:waveshare_rp2040_zero:usbstack=tinyusb Dronaldo
 ```
