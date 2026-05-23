@@ -26,3 +26,7 @@ desktop.ini
 # Keep student source folders, but ignore accidental compiled output anywhere.
 **/build/
 **/build-*/
+
+# Keep curated precompiled firmware artifacts.
+!firmware/
+!firmware/*.uf2
