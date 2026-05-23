@@ -28,9 +28,9 @@ This repository contains the example instruments from the workshop and a place f
 - Arduino libraries through Library Manager:
   - `Adafruit TinyUSB Library`
   - `MIDI Library`
-- Mutable Instruments audio libraries used by `Dronaldo` and `DrumLoop`:
-  - `BRAIDS`
-  - `STMLIB`
+- Bundled Mutable Instruments audio libraries from this repo:
+  - `libraries/BRAIDS`
+  - `libraries/STMLIB`
 
 Detailed setup steps are in [docs/student-setup.md](docs/student-setup.md).
 
@@ -66,4 +66,4 @@ Before publishing, add:
 - A clear repository description.
 - Photos or a diagram of the hardware.
 - A license, if you want students to reuse/remix the code openly.
-- The exact source or ZIP files for `BRAIDS` and `STMLIB`, if students cannot install them easily from Arduino Library Manager.
+- Any extra notes about the bundled third-party `BRAIDS` and `STMLIB` libraries.

@@ -26,8 +26,8 @@ Before sharing the repo, add:
 - Photos of the instrument.
 - A wiring diagram or schematic.
 - A short video or audio example, if useful.
-- The exact `BRAIDS` and `STMLIB` ZIP files or links used in class.
 - A license, if students are allowed to reuse/remix the examples.
+- Any extra attribution notes for the bundled `BRAIDS` and `STMLIB` libraries.
 
 Recommended folders:
 
@@ -35,11 +35,9 @@ Recommended folders:
 media/
   instrument-photo.jpg
   wiring-diagram.png
-libraries/
-  README.md
 ```
 
-Only include third-party libraries directly if their licenses allow redistribution.
+The repo already includes `libraries/BRAIDS` and `libraries/STMLIB` so students can compile the workshop sketches without searching for those dependencies.
 
 ## 3. Create the GitHub repository
 

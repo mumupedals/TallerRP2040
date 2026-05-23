@@ -56,12 +56,19 @@ Open `Sketch > Include Library > Manage Libraries...` and install:
 - `Adafruit TinyUSB Library`
 - `MIDI Library`
 
-For `Dronaldo` and `DrumLoop`, also install or copy:
+For `Dronaldo` and `DrumLoop`, this repository includes:
 
 - `BRAIDS`
 - `STMLIB`
 
-If `BRAIDS` or `STMLIB` are not available in Library Manager, ask the workshop maintainer for the ZIP files or the exact GitHub source used in class. One known source for these Mutable Instruments ports is https://github.com/poetaster/arduinoMI, which includes `BRAIDS` and `STMLIB` folders. They must be installed in the Arduino libraries folder.
+Copy these two folders from the repository:
+
+```text
+libraries/BRAIDS/
+libraries/STMLIB/
+```
+
+into your Arduino libraries folder.
 
 Typical Windows location:
 
@@ -76,7 +83,7 @@ Documents/Arduino/libraries/BRAIDS/
 Documents/Arduino/libraries/STMLIB/
 ```
 
-If the maintainer gives you ZIP files, use `Sketch > Include Library > Add .ZIP Library...` for each ZIP.
+Restart Arduino IDE after copying the folders.
 
 ## 5. Get this repository
 
