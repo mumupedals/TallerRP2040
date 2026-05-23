@@ -1,0 +1,28 @@
+# Arduino build output
+build/
+build-*/
+*.bin
+*.elf
+*.hex
+*.map
+*.uf2
+*.o
+*.d
+*.a
+*.eep
+
+# Arduino/IDE local state
+.vscode/
+.idea/
+*.code-workspace
+*.swp
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Keep student source folders, but ignore accidental compiled output anywhere.
+**/build/
+**/build-*/

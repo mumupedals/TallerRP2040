@@ -1,0 +1,62 @@
+# Dronaldo
+## Platform: RP2040
+## Hardware Revision: Shares Murci hardware
+## Status: Workshop firmware (prototype)
+
+A minimal-UI chord drone synth built for the mumunator workshop. Students take
+home an always-sounding 5-voice Braids drone they can play with four buttons
+and four knobs — no display, no encoder, no menus.
+
+## Controls
+| #  | Type | Primary Function    | Notes                                   |
+|----|------|---------------------|-----------------------------------------|
+| 1  | Pot  | Root                | Quantized to semitones, 2-octave range  |
+| 2  | Pot  | Timbre              | Braids Wavetables morph                 |
+| 3  | Pot  | Cutoff              | LP filter — full CCW = silence          |
+| 4  | Pot  | Inversion           | -6..+6, center detent at 0              |
+| 5  | Btn  | Major 7             | Selects chord quality (radio style)     |
+| 6  | Btn  | Minor 7             | Selects chord quality                   |
+| 7  | Btn  | Dominant 7          | Selects chord quality                   |
+| 8  | Btn  | Half-diminished 7   | Selects chord quality                   |
+
+## Pin Mapping
+| Function      | MCU Pin | ADC Ch | Notes                            |
+|---------------|---------|--------|----------------------------------|
+| Root Pot      | 26      | 0      | Quantized to semitone            |
+| Timbre Pot    | 27      | 1      | Braids timbre 0..32767           |
+| Cutoff Pot    | 28      | 2      | SVF cutoff + silencer gate       |
+| Inversion Pot | 29      | 3      | Quantized -6..+6                 |
+| BTN Maj7      | 6       | —      | Active LOW (INPUT_PULLUP)        |
+| BTN Min7      | 7       | —      | Active LOW                       |
+| BTN Dom7      | 8       | —      | Active LOW                       |
+| BTN ø7        | 9       | —      | Active LOW                       |
+| I2S BCLK      | 2       | —      | LRCK inferred = 3                |
+| I2S DIN       | 4       | —      | Audio data                       |
+
+## Chord Intervals (semitones from root)
+| Btn | Name  | Intervals       |
+|-----|-------|-----------------|
+| 0   | MAJ7  | 0, 4, 7, 11     |
+| 1   | MIN7  | 0, 3, 7, 10     |
+| 2   | DOM7  | 0, 4, 7, 10     |
+| 3   | ø7    | 0, 3, 6, 10     |
+
+A fifth voice always doubles the root +24 semitones for low-end body.
+
+## Behavior Notes
+- Output is continuous. Voices never retrigger — button presses and pot moves
+  update pitches legato so there are no clicks.
+- To change chords silently, close the cutoff pot fully, change buttons/root,
+  then reopen. Bottom ~9% of the cutoff pot acts as a soft mute.
+- Root pot spans MIDI 48–71 (C3–B4), quantized to 24 semitone bins with
+  hysteresis to prevent boundary flicker.
+
+## Firmware
+| File             | Description                                      |
+|------------------|--------------------------------------------------|
+| Dronaldo.ino     | Main entry, audio timer, input loop              |
+| config.h         | Pin map, chord table, tunable constants          |
+| audio_engine.cpp | Braids oscillator + Chamberlin SVF filter        |
+| audio_engine.h   | DroneVoice struct + SVF coefficient helpers      |
+
+No sequencer, no persistence, no MIDI, no display. Single core (Core 0).
