@@ -27,6 +27,7 @@
 #include <BRAIDS.h>
 
 #include "pico/stdlib.h"
+#include "pico/bootrom.h"
 #include "hardware/timer.h"
 #include "hardware/irq.h"
 #include "hardware/clocks.h"
@@ -433,6 +434,19 @@ static void scanButtons(uint32_t now_ms) {
 void setup() {
   set_sys_clock_khz(250000, true);
 
+  // ---- Inputs ----
+  analogReadResolution(12);
+  pinMode(BTN0_PIN, INPUT_PULLUP);
+  pinMode(BTN1_PIN, INPUT_PULLUP);
+  pinMode(BTN2_PIN, INPUT_PULLUP);
+  pinMode(BTN3_PIN, INPUT_PULLUP);
+
+  // BOOTSEL back door: hold the first and last buttons while plugging in USB
+  // to jump straight to the UF2 drag-and-drop bootloader.
+  if (digitalRead(BTN0_PIN) == LOW && digitalRead(BTN3_PIN) == LOW) {
+    reset_usb_boot(0, 0);
+  }
+
   // TinyUSB must be initialized before Serial (CDC) is used.
   if (!TinyUSBDevice.isInitialized()) TinyUSBDevice.begin(0);
 
@@ -441,13 +455,6 @@ void setup() {
     delay(500);
     Serial.println("=== DRONALDO BOOT ===");
   #endif
-
-  // ---- Inputs ----
-  analogReadResolution(12);
-  pinMode(BTN0_PIN, INPUT_PULLUP);
-  pinMode(BTN1_PIN, INPUT_PULLUP);
-  pinMode(BTN2_PIN, INPUT_PULLUP);
-  pinMode(BTN3_PIN, INPUT_PULLUP);
 
   // Prime smoothed pot values so the drone starts at the physical pot
   // positions rather than sweeping up from zero on first scan.
