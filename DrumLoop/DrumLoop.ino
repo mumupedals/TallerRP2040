@@ -2,6 +2,9 @@
   This workshop sketch was generated with AI assistance.
   Please read it critically, test it, and question every design choice.
   If something seems confusing, surprising, or wrong, that is a good reason to inspect the code and improve it.
+
+  This sketch builds on Braids/STMLIB synthesis code by
+  Émilie Gillet / Mutable Instruments.
 */
 
 #include <Arduino.h>

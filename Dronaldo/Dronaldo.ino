@@ -18,6 +18,9 @@
   the filter doesn't jump when POT4 is handed back.
 
   All audio and input runs on Core 0; Core 1 is unused.
+
+  This sketch builds on Braids/STMLIB synthesis code by
+  Émilie Gillet / Mutable Instruments.
 */
 
 #include <Arduino.h>

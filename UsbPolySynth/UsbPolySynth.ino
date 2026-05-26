@@ -11,6 +11,9 @@
     4. Filter: cutoff, resonance, envelope amount, key tracking.
 
   Hold buttons 1 and 4 while plugging in USB to jump to the UF2 bootloader.
+
+  This sketch builds on Braids/STMLIB synthesis code by
+  Émilie Gillet / Mutable Instruments.
 */
 
 #include <Arduino.h>
